@@ -1,11 +1,6 @@
 node {
     def app
 
-    agent
-    {
-        dockerfile true
-    }
-    
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
@@ -16,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("Alsharafi77/hellonode")
+        app = docker.build("hellonode")
     }
 
     stage('Test image') {
